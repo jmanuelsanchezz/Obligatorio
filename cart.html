@@ -1,69 +1,156 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <head>
+    <script src="js/redirect.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/album/"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    />
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
-    }
-  </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
-</head>
 
-<body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-</body>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dropzone.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet" />
+  </head>
 
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between"
+      >
+        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html"
+          >Categorías</a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="products.html"
+          >Productos</a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <a
+          id="nombNav"
+          class="py-2 d-none d-md-inline-block"
+          href="my-profile.html"
+        ></a>
+      </div>
+    </nav>
+    <div class="container p-5">
+      <div class="cart_section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <div class="cart_container">
+                <div class="cart_title">Mi Carrito</div>
+                <div class="cart_items">
+                  <ul class="cart_list">
+                    <li class="cart_item clearfix">
+                      <div class="cart_item_image"></div>
+                      <div
+                        class="
+                          cart_item_info
+                          d-flex
+                          flex-md-row flex-column
+                          justify-content-between
+                        "
+                      >
+                        <div class="cart_item_name cart_info_col">
+                          <div class="cart_item_title">Name</div>
+                          <div class="cart_item_text">Samsung C7 Pro</div>
+                        </div>
+                        <div class="cart_item_color cart_info_col">
+                          <div class="cart_item_title">Color</div>
+                          <div class="cart_item_text">
+                            <span style="background-color: #999999"></span
+                            >Silver
+                          </div>
+                        </div>
+                        <div class="cart_item_quantity cart_info_col">
+                          <div class="cart_item_title">Quantity</div>
+                          <div class="cart_item_text">1</div>
+                        </div>
+                        <div class="cart_item_price cart_info_col">
+                          <div class="cart_item_title">Price</div>
+                          <div class="cart_item_text">₹22000</div>
+                        </div>
+                        <div class="cart_item_total cart_info_col">
+                          <div class="cart_item_title">Total</div>
+                          <div class="cart_item_text">₹22000</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="order_total">
+                  <div class="order_total_content text-md-right">
+                    <div class="order_total_title">Order Total:</div>
+                    <div class="order_total_amount">₹22000</div>
+                  </div>
+                </div>
+                <div class="cart_buttons">
+                  <button type="button" class="button cart_button_clear">
+                    Continue Shopping
+                  </button>
+                  <button type="button" class="button cart_button_checkout">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/login.js"></script>
+  </body>
 </html>

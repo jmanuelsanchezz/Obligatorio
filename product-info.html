@@ -1,60 +1,178 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <head>
+    <script src="js/redirect.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/album/"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/product-info.css" rel="stylesheet" />
+  </head>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-</head>
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between"
+      >
+        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html"
+          >Categorías</a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="products.html"
+          >Productos</a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>        
+        <a
+          id="nombNav"
+          class="py-2 d-none d-md-inline-block"
+          href="my-profile.html"
+        ></a>
+      </div>
+    </nav>
+    <main role="main">
+      <div class="container mt-5">
+        <div class="text-center p-4">
+          <h2>Descripción del producto</h2>
+          <p class="lead">
+            Encontrarás aquí toda la información del producto seleccionado.
+          </p>
+          <p class="small alert-warning py-3 container">
+            <strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+            seleccionado previamente, siempre se visualizará el presente:
+            <strong>Chevrolet Onix</strong>.
+          </p>
+        </div>
+        <h3 id="productName"></h3>
+        <hr class="my-3" />
+        <dl>
+          <dt>Descripción</dt>
+          <dd>
+            <p id="productDescription"></p>
+          </dd>
 
-<body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      
-    </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-</body>
+          <dt>Precio</dt>
+          <dd>
+            <p id="productCost"></p>
+          </dd>
 
+          <dt>Categoría</dt>
+          <dd>
+            <p id="productCategory"></p>
+          </dd>
+
+          <dt>Imágenes ilustrativas</dt>
+          <dd>
+            <br>
+            <div class="col-7">
+              <div class= "row text-center text-lg-left pt-2">           
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>      
+                </ol>
+                <div class="carousel-inner" id="productImagesGallery">                      
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                </div>
+              </div>
+            </div>
+          </dd>       
+        <a
+          type="button"
+          class="btn btn-light btn-lg btn-block container mt-5"
+          href="products.html"
+          >Ver productos</a
+        >        
+        <div class="container mt-5" id="related-prod-container">
+        </div>
+      </div>      
+      <div class="container mt-5">
+        <p><b>Deja tu opinión aquí:</b></p>
+        <div class="rating">
+          <input type="radio" name="rating" value="5" id="5" /><label for="5"
+            >☆</label
+          >
+          <input type="radio" name="rating" value="4" id="4" /><label for="4"
+            >☆</label
+          >
+          <input type="radio" name="rating" value="3" id="3" /><label for="3"
+            >☆</label
+          >
+          <input type="radio" name="rating" value="2" id="2" /><label for="2"
+            >☆</label
+          >
+          <input type="radio" name="rating" value="1" id="1" /><label for="1"
+            >☆</label
+          >
+        </div>       
+        <div class="comment-area">
+          <form onsubmit="return false">
+          <textarea
+            id="comment-section"
+            class="form-control"
+            name="comments"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="mt-2">
+          <button id="send" onclick="commentOnSubmit()">Enviar</button>
+        </div>
+          </form>
+      </div>
+      <div class="container mt-5">
+        <dl id="comments-container"></dl>
+      </div>      
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>
+          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+          letra del obligatorio.
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+    <script src="js/login.js"></script>
+  </body>
 </html>
